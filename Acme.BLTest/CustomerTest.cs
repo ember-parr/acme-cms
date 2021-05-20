@@ -10,9 +10,11 @@ namespace Acme.BLTest
         public void FullNameTestValid()
         {
             // Arrange
-            Customer customer = new Customer();
-            customer.FirstName = "Transformers";
-            customer.LastName = "Activate";
+            Customer customer = new Customer
+            {
+                FirstName = "Bilbo",
+                LastName = "Baggins"
+            };
 
             // Act
 
