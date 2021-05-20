@@ -8,5 +8,13 @@ namespace ACM.BL
         public string LastName { get; set; }
         public string Email { get; set; }
         public int CustomerId { get; private set; }
+
+        public string FullName
+        {
+            get
+            {
+                return LastName + ", " + FirstName;
+            }
+        }
     }
 }
