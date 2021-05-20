@@ -4,8 +4,9 @@ namespace ACM.BL
 {
     public class Customer
     {
-        private string _lastName;
-        public string LastName { get; set; };
-
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public int CustomerId { get; private set; }
     }
 }
