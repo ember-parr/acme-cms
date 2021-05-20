@@ -25,5 +25,10 @@ namespace ACM.BL
                 return fullName;
             }
         }
+
+        public void PrintName()
+        {
+            Console.WriteLine(FullName);
+        }
     }
 }
