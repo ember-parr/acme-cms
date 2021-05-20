@@ -29,6 +29,9 @@ namespace ACM.BL
         public void PrintName()
         {
             Console.WriteLine(FullName);
+            CustomerCount++;
         }
+
+        public static int CustomerCount = 0;
     }
 }
