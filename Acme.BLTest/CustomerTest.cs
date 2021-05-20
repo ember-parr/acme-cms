@@ -15,10 +15,13 @@ namespace Acme.BLTest
                 FirstName = "Bilbo",
                 LastName = "Baggins"
             };
+            string expected = "Baggins, Bilbo";
 
             // Act
+            string actual = customer.FullName;
 
             // Assert
+            Assert.True(expected == actual);
 
         }
     }
