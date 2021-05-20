@@ -2,7 +2,20 @@
 
 namespace ACM.BL
 {
-    public class Class1
+    public class Customer
     {
+        private string _lastName;
+        public string LastName
+        {
+            get
+            {
+                return _lastName;
+            }
+            set
+            {
+                _lastName = value;
+            }
+        }
+
     }
 }
