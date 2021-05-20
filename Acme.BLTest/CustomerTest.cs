@@ -1,13 +1,22 @@
 using System;
+using ACM.BL;
 using Xunit;
 
 namespace Acme.BLTest
 {
-    public class UnitTest1
+    public class CustomerTest
     {
         [Fact]
-        public void Test1()
+        public void FullNameTestValid()
         {
+            // Arrange
+            Customer customer = new Customer();
+            customer.FirstName = "Transformers";
+            customer.LastName = "Activate";
+
+            // Act
+
+            // Assert
 
         }
     }
