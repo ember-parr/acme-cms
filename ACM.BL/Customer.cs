@@ -13,8 +13,22 @@ namespace ACM.BL
         {
             get
             {
-                return LastName + ", " + FirstName;
+                string fullName = LastName; // if no first name, full name is only last name without commas
+                if (!string.IsNullOrWhiteSpace(FirstName))
+                {
+                    if (!string.IsNullOrWhiteSpace(LastName))
+                    {
+                        fullName += ", ";
+                    }
+                    fullName += FirstName;
+                }
+                return fullName;
             }
+        }
+
+        public void PrintName()
+        {
+            Console.WriteLine(FullName);
         }
     }
 }
