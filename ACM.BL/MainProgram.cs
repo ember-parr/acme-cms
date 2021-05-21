@@ -3,7 +3,7 @@ namespace ACM.BL
 {
     public class MainProgram
     {
-        static void Main(string[] args)
+        static void Ember(string[] args)
         {
             Console.WriteLine("Customer Count: " + Customer.CustomerCount);
             Console.WriteLine("----------");

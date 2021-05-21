@@ -60,5 +60,37 @@ namespace Acme.BLTest
             Assert.True(expected == actual);
 
         }
+
+        [Fact]
+        public void CustomerCountCheck()
+        {
+            Customer c1 = new Customer();
+            c1.PrintName();
+            Customer c2 = new Customer();
+            c2.PrintName();
+            Customer c3 = new Customer();
+            c3.PrintName();
+            int expected = 3;
+
+            int actual = Customer.CustomerCount;
+
+            Assert.True(expected == actual);
+
+        }
+
+        [Fact]
+        public void CheckValidate()
+        {
+            Customer customer = new Customer
+            {
+                LastName = "PartyPants",
+                Email = "howdydoody@google.com"
+            };
+            bool expected = true;
+
+            bool actual = customer.Validate();
+
+            Assert.True(expected == actual);
+        }
     }
 }
