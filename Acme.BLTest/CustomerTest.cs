@@ -79,7 +79,7 @@ namespace Acme.BLTest
         }
 
         [Fact]
-        public void CheckValidate()
+        public void ValidateValid()
         {
             Customer customer = new Customer
             {
@@ -87,6 +87,20 @@ namespace Acme.BLTest
                 Email = "howdydoody@google.com"
             };
             bool expected = true;
+
+            bool actual = customer.Validate();
+
+            Assert.True(expected == actual);
+        }
+
+        [Fact]
+        public void ValidateMissingLastName()
+        {
+            Customer customer = new Customer
+            {
+                Email = "spongebob@squarepants.com"
+            };
+            bool expected = false;
 
             bool actual = customer.Validate();
 
