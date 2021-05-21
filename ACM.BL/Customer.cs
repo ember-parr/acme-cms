@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace ACM.BL
 {
@@ -35,25 +36,38 @@ namespace ACM.BL
         public static int CustomerCount = 0;
 
 
+
+
+
+
+
+
+
         public bool Validate()
         {
-            bool isValid = false;
-            bool lNameEmpty = string.IsNullOrWhiteSpace(LastName);
-            bool emailEmpty = string.IsNullOrWhiteSpace(Email);
-            bool emailContains = Email.Contains("@") && Email.Contains(".");
-            bool emailValid = false;
-            if (emailContains && !emailEmpty)
+            if (string.IsNullOrWhiteSpace(LastName))
             {
-                emailValid = true;
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(Email))
+            {
+                return false;
+            }
+            else if (Email.Contains("@") == false)
+            {
+                return false;
+            }
+            else if (Email.Contains(".") == false)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
             }
 
-            if (!lNameEmpty && emailValid)
-            {
-                isValid = true;
-            }
-
-
-            return isValid;
         }
+
     }
+
 }
