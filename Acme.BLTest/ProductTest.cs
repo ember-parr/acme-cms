@@ -58,20 +58,6 @@ namespace Acme.BLTest
             Assert.True(expected == actual);
         }
 
-        //[Fact]
-        //public void XXX()
-        //{
-        //    // Arrange
-
-        //    string expected;
-
-        //    // Act
-        //    string actual;
-
-        //    // Assert
-        //    Assert.True(expected == actual);
-        //}
-
 
     }
 }
