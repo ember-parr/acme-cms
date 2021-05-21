@@ -1,10 +1,17 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Threading;
 
 namespace ACM.BL
 {
     public class Customer
     {
+        public Customer()
+        {
+            CustomerId = Interlocked.Increment(ref nextId);
+        }
+
+        static int nextId;
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }

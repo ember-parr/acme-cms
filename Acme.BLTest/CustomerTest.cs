@@ -160,5 +160,38 @@ namespace Acme.BLTest
             // Assert
             Assert.True(expected == isValid);
         }
+
+        [Fact]
+        public void CustomerIDIncrement()
+        {
+            // Arrange
+            Customer customer = new Customer
+            {
+                LastName = "Squarepants",
+                Email = "bikinibottom@yahoo.com"
+            };
+            Customer customerTwo = new Customer
+            {
+                LastName = "Squarepants",
+                Email = "bikinibottom@yahoo.com"
+            };
+            Customer customerThree = new Customer
+            {
+                LastName = "Squarepants",
+                Email = "bikinibottom@yahoo.com"
+            };
+            Customer customerFour = new Customer
+            {
+                LastName = "Squarepants",
+                Email = "bikinibottom@yahoo.com"
+            };
+            int expected = 4;
+
+            // Act
+            int actual = customerFour.CustomerId;
+
+            // Assert
+            Assert.True(expected < actual);
+        }
     }
 }
