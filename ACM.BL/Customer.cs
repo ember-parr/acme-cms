@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace ACM.BL
 {
@@ -44,7 +45,6 @@ namespace ACM.BL
 
         public bool Validate()
         {
-
             if (string.IsNullOrWhiteSpace(LastName))
             {
                 return false;
