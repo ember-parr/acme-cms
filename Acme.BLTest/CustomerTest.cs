@@ -1,5 +1,6 @@
 using System;
 using ACM.BL;
+//using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Xunit;
 
 namespace Acme.BLTest
@@ -133,6 +134,31 @@ namespace Acme.BLTest
 
             // Assert
             Assert.True(expected == actual);
+        }
+
+        [Fact]
+        public void ValidateEmailCharacters()
+        {
+            // Arrange
+            Customer c1 = new Customer
+            {
+                LastName = "First",
+                Email = "firstgoogle.com"
+            };
+            Customer c2 = new Customer
+            {
+                LastName = "Second",
+                Email = "second@googlecom"
+            };
+            bool expected = false;
+
+            // Act
+            bool isValid = false;
+            if (c1.Validate()) isValid = true;
+            if (c2.Validate()) isValid = true;
+
+            // Assert
+            Assert.True(expected == isValid);
         }
     }
 }

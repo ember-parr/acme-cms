@@ -44,52 +44,28 @@ namespace ACM.BL
 
         public bool Validate()
         {
-            var isValid = true;
 
-            if (string.IsNullOrWhiteSpace(LastName)) isValid = false;
-            if (string.IsNullOrWhiteSpace(Email))
+            if (string.IsNullOrWhiteSpace(LastName))
             {
-                isValid = false;
+                return false;
             }
-            else if (!Email.Contains("@"))
+            else if (string.IsNullOrWhiteSpace(Email))
             {
-                isValid = false;
+                return false;
             }
-            else if (!Email.Contains("."))
+            else if (Email.Contains("@") == false)
             {
-                isValid = false;
+                return false;
+            }
+            else if (Email.Contains(".") == false)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
             }
 
-
-
-            //if (Email.Contains("@") == false) isValid = false;
-            //if (Email.Contains(".") == false) isValid = false;
-
-            return isValid;
-
-
-
-
-
-            //bool lNameEmpty = string.IsNullOrWhiteSpace(LastName);
-            //bool emailEmpty = string.IsNullOrWhiteSpace(Email);
-            //bool emailContainsAt = Email.Contains("@");
-            //bool emailContainsDot = Email.Contains(".");
-
-            //if (emailContainsAt && emailContainsDot)
-            //{
-            //    if (emailEmpty && lNameEmpty)
-            //    {
-            //        return true;
-            //    }
-            //    else
-            //    {
-            //        return false;
-            //    }
-            //}
-            //else
-            //{
-            //    return false;
         }
 
     }
