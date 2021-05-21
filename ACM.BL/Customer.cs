@@ -35,25 +35,63 @@ namespace ACM.BL
         public static int CustomerCount = 0;
 
 
+
+
+
+
+
+
+
         public bool Validate()
         {
-            bool isValid = false;
-            bool lNameEmpty = string.IsNullOrWhiteSpace(LastName);
-            bool emailEmpty = string.IsNullOrWhiteSpace(Email);
-            bool emailContains = Email.Contains("@") && Email.Contains(".");
-            bool emailValid = false;
-            if (emailContains && !emailEmpty)
+            var isValid = true;
+
+            if (string.IsNullOrWhiteSpace(LastName)) isValid = false;
+            if (string.IsNullOrWhiteSpace(Email))
             {
-                emailValid = true;
+                isValid = false;
+            }
+            else if (!Email.Contains("@"))
+            {
+                isValid = false;
+            }
+            else if (!Email.Contains("."))
+            {
+                isValid = false;
             }
 
-            if (!lNameEmpty && emailValid)
-            {
-                isValid = true;
-            }
 
+
+            //if (Email.Contains("@") == false) isValid = false;
+            //if (Email.Contains(".") == false) isValid = false;
 
             return isValid;
+
+
+
+
+
+            //bool lNameEmpty = string.IsNullOrWhiteSpace(LastName);
+            //bool emailEmpty = string.IsNullOrWhiteSpace(Email);
+            //bool emailContainsAt = Email.Contains("@");
+            //bool emailContainsDot = Email.Contains(".");
+
+            //if (emailContainsAt && emailContainsDot)
+            //{
+            //    if (emailEmpty && lNameEmpty)
+            //    {
+            //        return true;
+            //    }
+            //    else
+            //    {
+            //        return false;
+            //    }
+            //}
+            //else
+            //{
+            //    return false;
         }
+
     }
+
 }
