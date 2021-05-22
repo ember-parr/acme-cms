@@ -23,6 +23,10 @@ namespace ACM.BL
             {
                 return false;
             }
+            else if (ProductId <= 0)
+            {
+                return false;
+            }
             else if (PurchasePrice == null)
             {
                 return false;
