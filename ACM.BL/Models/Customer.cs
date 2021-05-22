@@ -11,6 +11,11 @@ namespace ACM.BL
             CustomerId = Interlocked.Increment(ref nextId);
         }
 
+        public Customer(int customerId)
+        {
+            CustomerId = customerId;
+        }
+
         static int nextId;
         public string FirstName { get; set; }
         public string LastName { get; set; }
