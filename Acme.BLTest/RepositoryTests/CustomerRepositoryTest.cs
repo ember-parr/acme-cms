@@ -18,6 +18,7 @@ namespace Acme.BLTest.RepositoryTests
                 FirstName = "Foo",
                 LastName = "Bar"
             };
+
             // Act
             var actual = repo.Retrieve(1);
 
