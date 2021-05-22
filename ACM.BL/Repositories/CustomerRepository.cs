@@ -12,7 +12,7 @@ namespace ACM.BL.Repositories
             // Not creating Data Access   Layer for this project
             if (customer.CustomerId == 1)
             {
-                customer.Email = "Foo@boo.com";
+                customer.Email = "Foo@bar.org";
                 customer.FirstName = "Foo";
                 customer.LastName = "Bar";
             }
