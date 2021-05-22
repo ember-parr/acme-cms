@@ -8,8 +8,8 @@ namespace ACM.BL.Repositories
             Customer customer = new Customer(customerId);
 
 
-            // TEMPORARY HARD CODED CUSTOMER DATA
-            // Not creating Data Layer for this project
+            // HARD CODED CUSTOMER DATA
+            // Not creating Data Access Layer for this project
             if (customer.CustomerId == 1)
             {
                 customer.Email = "Foo@boo.com";
@@ -17,6 +17,13 @@ namespace ACM.BL.Repositories
                 customer.LastName = "Bar";
             }
             return customer;
+        }
+
+        public bool Save(Customer customer)
+        {
+            // Hard coded data because of no Data Access Layer in this project
+            // will return true rather than a customer. 
+            return true;
         }
     }
 }
