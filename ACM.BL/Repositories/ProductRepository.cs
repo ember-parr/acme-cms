@@ -10,7 +10,7 @@ namespace ACM.BL.Repositories
             // HARD CODING DATA -- NO DATA ACCESS LAYER IN THIS PROJECT
             if (productId == 2)
             {
-                product.CurrentPrice = 20;
+                product.CurrentPrice = 20.43M;
                 product.ProductDescription = "silky smooth";
                 product.ProductName = "Shoe Laces";
             }
@@ -21,7 +21,14 @@ namespace ACM.BL.Repositories
         {
             // HARD CODED DATA
             // NO DATA ACCESS LAYER IN THIS PROJECT
-            return true;
+            if (product != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
