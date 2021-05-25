@@ -20,4 +20,8 @@
   <ItemGroup>
     <ProjectReference Include="..\ACM.BL\ACM.BL.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="RepositoryTests\" />
+    <Folder Include="ModelTests\" />
+  </ItemGroup>
 </Project>

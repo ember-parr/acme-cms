@@ -61,25 +61,7 @@ namespace Acme.BLTest
 
         }
 
-        [Fact]
-        public void CustomerCountCheck()
-        {
-            // Arrange
-            Customer c1 = new Customer();
-            c1.PrintName();
-            Customer c2 = new Customer();
-            c2.PrintName();
-            Customer c3 = new Customer();
-            c3.PrintName();
-            int expected = 3;
 
-            // Act
-            int actual = Customer.CustomerCount;
-
-            // Assert
-            Assert.True(expected == actual);
-
-        }
 
         [Fact]
         public void ValidateValid()
@@ -160,37 +142,6 @@ namespace Acme.BLTest
             Assert.True(expected == isValid);
         }
 
-        [Fact]
-        public void CustomerIDIncrement()
-        {
-            // Arrange
-            Customer customer = new Customer
-            {
-                LastName = "Squarepants",
-                Email = "bikinibottom@yahoo.com"
-            };
-            Customer customerTwo = new Customer
-            {
-                LastName = "Squarepants",
-                Email = "bikinibottom@yahoo.com"
-            };
-            Customer customerThree = new Customer
-            {
-                LastName = "Squarepants",
-                Email = "bikinibottom@yahoo.com"
-            };
-            Customer customerFour = new Customer
-            {
-                LastName = "Squarepants",
-                Email = "bikinibottom@yahoo.com"
-            };
-            int expected = 4;
 
-            // Act
-            int actual = customerFour.CustomerId;
-
-            // Assert
-            Assert.True(expected < actual);
-        }
     }
 }

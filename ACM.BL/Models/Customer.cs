@@ -8,10 +8,14 @@ namespace ACM.BL
     {
         public Customer()
         {
-            CustomerId = Interlocked.Increment(ref nextId);
+
         }
 
-        static int nextId;
+        public Customer(int customerId)
+        {
+            CustomerId = customerId;
+        }
+
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
@@ -37,10 +41,7 @@ namespace ACM.BL
         public void PrintName()
         {
             Console.WriteLine(FullName);
-            CustomerCount++;
         }
-
-        public static int CustomerCount = 0;
 
 
 
