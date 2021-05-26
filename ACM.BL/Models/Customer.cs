@@ -28,7 +28,7 @@ namespace ACM.BL
         {
             get
             {
-                string fullName = LastName; // if no first name, full name is only last name without commas
+                string fullName = LastName; // if no first name, name displ only last name without commas
                 if (!string.IsNullOrWhiteSpace(FirstName))
                 {
                     if (!string.IsNullOrWhiteSpace(LastName))
