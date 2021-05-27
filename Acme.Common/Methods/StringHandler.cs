@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace Acme.Common.Methods
 {
     public class StringHandler
