@@ -14,21 +14,34 @@ namespace ACM.BL.Repositories
                 product.ProductDescription = "silky smooth";
                 product.ProductName = "Shoe Laces";
             }
+            Object myObject = new object();
+            Console.WriteLine($"Object: {myObject.ToString()}");
+            Console.WriteLine($"Product: {product.ToString()}");
             return product;
         }
 
         public bool Save(Product product)
         {
-            // HARD CODED DATA
-            // NO DATA ACCESS LAYER IN THIS PROJECT
-            if (product != null)
+            var success = true;
+            if (product.HasChanges)
             {
-                return true;
+                if (product.IsValid)
+                {
+                    if (product.IsNew)
+                    {
+                        // CALL AN INSERT STORED PROCEDURE
+                    }
+                    else
+                    {
+                        // CALL AN UPDATE STORED PROCEDURE
+                    }
+                }
+                else
+                {
+                    success = false;
+                }
             }
-            else
-            {
-                return false;
-            }
+            return success;
         }
     }
 }

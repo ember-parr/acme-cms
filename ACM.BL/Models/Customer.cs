@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using ACM.BL.Models;
 using System.ComponentModel.DataAnnotations;
 using System.Threading;
 
 namespace ACM.BL
 {
-    public class Customer
+    public class Customer : EntityBase
     {
         public Customer() : this(0)
         {
@@ -24,6 +25,8 @@ namespace ACM.BL
         public string Email { get; set; }
         public int CustomerId { get; private set; }
         public int CustomerType { get; set; }
+
+        public override string ToString() => FullName;
 
         public string FullName
         {
@@ -48,7 +51,7 @@ namespace ACM.BL
         }
 
 
-        public bool Validate()
+        public override bool Validate()
         {
             if (string.IsNullOrWhiteSpace(LastName))
             {

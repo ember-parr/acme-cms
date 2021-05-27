@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using ACM.BL.Models;
 
 namespace ACM.BL
 {
-    public class Order
+    public class Order : EntityBase
     {
         public Order() : this(0)
         {
@@ -20,7 +21,12 @@ namespace ACM.BL
         public int ShippingAddressId { get; set; }
         public List<OrderItem> OrderItems { get; set; }
 
-        public bool Validate()
+        public override string ToString()
+        {
+            return $"{OrderDate.Value.Date} ({OrderId})";
+        }
+
+        public override bool Validate()
         {
             if (OrderDate == null)
             {

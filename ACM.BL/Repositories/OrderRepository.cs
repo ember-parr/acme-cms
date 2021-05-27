@@ -11,20 +11,32 @@ namespace ACM.BL.Repositories
             {
                 order.OrderDate = new DateTimeOffset(DateTime.Now.Year, 4, 14, 10, 00, 00, new TimeSpan(7, 0, 0));
             }
-
+            Console.WriteLine($"Order: {order.ToString()}");
             return order;
         }
 
         public bool Save(Order order)
         {
-            if (order != null)
+            var success = true;
+            if (order.HasChanges)
             {
-                return true;
+                if (order.IsValid)
+                {
+                    if (order.IsNew)
+                    {
+                        // CALL AN INSERT STORED PROCEDURE
+                    }
+                    else
+                    {
+                        // CALL AN UPDATE STORED PROCEDURE
+                    }
+                }
+                else
+                {
+                    success = false;
+                }
             }
-            else
-            {
-                return false;
-            }
+            return success;
         }
     }
 }
