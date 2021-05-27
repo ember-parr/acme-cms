@@ -7,7 +7,7 @@ namespace ACM.BL
 {
     public class Customer
     {
-        public Customer(): this(0)
+        public Customer() : this(0)
         {
 
         }
@@ -23,6 +23,7 @@ namespace ACM.BL
         public string LastName { get; set; }
         public string Email { get; set; }
         public int CustomerId { get; private set; }
+        public int CustomerType { get; set; }
 
         public string FullName
         {
@@ -47,13 +48,6 @@ namespace ACM.BL
         }
 
 
-
-
-
-
-
-
-
         public bool Validate()
         {
             if (string.IsNullOrWhiteSpace(LastName))
@@ -76,9 +70,6 @@ namespace ACM.BL
             {
                 return true;
             }
-
         }
-
-    }
-
+}
 }
