@@ -28,8 +28,13 @@ namespace Acme.Common.Methods
         public string TitleCase(string source)
         {
             TextInfo TextCasing = new CultureInfo("en-US", false).TextInfo;
-            source.Trim();
-            return TextCasing.ToTitleCase(source);
+            return TextCasing.ToTitleCase(source).Trim();
+        }
+
+        public string LowerCase(string source)
+        {
+            TextInfo TextCasing = new CultureInfo("en-US", false).TextInfo;
+            return TextCasing.ToLower(source).Trim();
         }
     }
 }

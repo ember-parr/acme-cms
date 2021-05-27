@@ -58,12 +58,27 @@ namespace Acme.CommonTests
         public void TitleCaseTestValid()
         {
             // Arrange
-            var source = "sPoNgEboB sQUaRePanTz";
+            var source = "  sPoNgEboB sQUaRePanTz";
             var expected = "Spongebob Squarepantz";
             var handler = new StringHandler();
 
             // Act
             var actual = handler.TitleCase(source);
+
+            // Assert
+            Assert.True(expected == actual);
+        }
+
+        [Fact]
+        public void LowerCaseTestValid()
+        {
+            // Arrange
+            var source = "  HEllO FroM tHe oTHEr SiDe  ";
+            var expected = "hello from the other side";
+            var handler = new StringHandler();
+
+            // Act
+            var actual = handler.LowerCase(source);
             Console.WriteLine(actual);
 
             // Assert
