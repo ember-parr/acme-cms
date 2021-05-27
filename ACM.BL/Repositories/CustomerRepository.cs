@@ -26,11 +26,13 @@ namespace ACM.BL.Repositories
                 customer.LastName = "Bar";
                 customer.AddressList = addressRepository.RetrieveByCustomerId(customerId).ToList();
             }
+            Console.WriteLine("IT WORKED!");
             return customer;
         }
 
         public bool Save(Customer customer)
         {
+
             // Hard coded data because of no Data Access Layer in this project
             // will return true rather than a customer. 
             return true;

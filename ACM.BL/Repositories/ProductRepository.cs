@@ -14,6 +14,9 @@ namespace ACM.BL.Repositories
                 product.ProductDescription = "silky smooth";
                 product.ProductName = "Shoe Laces";
             }
+            Object myObject = new object();
+            Console.WriteLine($"Object: {myObject.ToString()}");
+            Console.WriteLine($"Product: {product.ToString()}");
             return product;
         }
 
