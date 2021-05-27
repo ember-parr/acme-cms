@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 
 namespace Acme.Common.Methods
@@ -22,6 +23,13 @@ namespace Acme.Common.Methods
             }
             result = result.Trim();
             return result;
+        }
+
+        public string TitleCase(string source)
+        {
+            TextInfo TextCasing = new CultureInfo("en-US", false).TextInfo;
+            source.Trim();
+            return TextCasing.ToTitleCase(source);
         }
     }
 }

@@ -53,5 +53,21 @@ namespace Acme.CommonTests
             // Assert
             Assert.True(expected == actual);
         }
+
+        [Fact]
+        public void TitleCaseTestValid()
+        {
+            // Arrange
+            var source = "sPoNgEboB sQUaRePanTz";
+            var expected = "Spongebob Squarepantz";
+            var handler = new StringHandler();
+
+            // Act
+            var actual = handler.TitleCase(source);
+            Console.WriteLine(actual);
+
+            // Assert
+            Assert.True(expected == actual);
+        }
     }
 }
