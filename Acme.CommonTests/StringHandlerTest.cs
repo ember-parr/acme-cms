@@ -23,5 +23,35 @@ namespace Acme.CommonTests
             // Assert
             Assert.True(expected == actual);
         }
+
+        [Fact]
+        public void InsertSpacesTestWithExistingSpace()
+        {
+            // Arrange
+            var source = "Crazy Cat Lady";
+            var expected = "Crazy Cat Lady";
+            var handler = new StringHandler();
+
+            // Act
+            var actual = handler.InsertSpaces(source);
+
+            // Assert
+            Assert.True(expected == actual);
+        }
+
+        [Fact]
+        public void InsertSpacesTestEmptyString()
+        {
+            // Arrange
+            var source = "   ";
+            var expected = String.Empty;
+            var handler = new StringHandler();
+
+            // Act
+            var actual = handler.InsertSpaces(source);
+
+            // Assert
+            Assert.True(expected == actual);
+        }
     }
 }

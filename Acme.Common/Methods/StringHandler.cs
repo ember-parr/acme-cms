@@ -14,6 +14,7 @@ namespace Acme.Common.Methods
                 {
                     if (char.IsUpper(letter))
                     {
+                        result = result.Trim();
                         result += " ";
                     }
                     result += letter;
