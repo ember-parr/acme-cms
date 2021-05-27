@@ -28,5 +28,25 @@ namespace Acme.BLTest.RepositoryTests
             Assert.True(expected.ProductDescription == actual.ProductDescription);
             Assert.True(expected.ProductName == actual.ProductName);
         }
+
+        [Fact]
+        public void SaveTestValid()
+        {
+            // Arrange
+            var productRepo = new ProductRepository();
+            var updatedProduct = new Product(2)
+            {
+                CurrentPrice = 18M,
+                ProductDescription = "Assorted size set of bouncy balls",
+                ProductName = "Bouncy Ball Bonanza",
+                HasChanges = true
+            };
+
+            // Act
+            var actual = productRepo.Save(updatedProduct);
+
+            // Assert
+            Assert.True(actual == true);
+        }
     }
 }

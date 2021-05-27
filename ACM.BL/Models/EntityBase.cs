@@ -19,9 +19,6 @@ namespace ACM.BL.Models
         public bool HasChanges { get; set; }
         public bool IsValid => Validate();
 
-        public bool Validate()
-        {
-
-        }
+        public abstract bool Validate();
     }
 }
