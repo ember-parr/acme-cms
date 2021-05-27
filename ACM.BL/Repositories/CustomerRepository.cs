@@ -32,10 +32,26 @@ namespace ACM.BL.Repositories
 
         public bool Save(Customer customer)
         {
-
-            // Hard coded data because of no Data Access Layer in this project
-            // will return true rather than a customer. 
-            return true;
+            var success = true;
+            if (customer.HasChanges)
+            {
+                if (customer.IsValid)
+                {
+                    if (customer.IsNew)
+                    {
+                        // CALL AN INSERT STORED PROCEDURE
+                    }
+                    else
+                    {
+                        // CALL AN UPDATE STORED PROCEDURE
+                    }
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            return success;
         }
     }
 }

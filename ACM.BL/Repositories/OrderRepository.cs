@@ -17,14 +17,26 @@ namespace ACM.BL.Repositories
 
         public bool Save(Order order)
         {
-            if (order != null)
+            var success = true;
+            if (order.HasChanges)
             {
-                return true;
+                if (order.IsValid)
+                {
+                    if (order.IsNew)
+                    {
+                        // CALL AN INSERT STORED PROCEDURE
+                    }
+                    else
+                    {
+                        // CALL AN UPDATE STORED PROCEDURE
+                    }
+                }
+                else
+                {
+                    success = false;
+                }
             }
-            else
-            {
-                return false;
-            }
+            return success;
         }
     }
 }
