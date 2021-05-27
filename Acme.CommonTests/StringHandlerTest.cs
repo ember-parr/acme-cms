@@ -1,6 +1,5 @@
-﻿using System;
+using System;
 using Acme.Common.Methods;
-
 using Xunit;
 
 namespace Acme.CommonTests
@@ -17,6 +16,9 @@ namespace Acme.CommonTests
 
             // Act
             var actual = handler.InsertSpaces(source);
+            Console.WriteLine($"Source: {source}");
+            Console.WriteLine($"Expected: {expected}");
+            Console.WriteLine($"Actual: {actual}");
 
             // Assert
             Assert.True(expected == actual);

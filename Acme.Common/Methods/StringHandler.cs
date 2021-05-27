@@ -19,6 +19,7 @@ namespace Acme.Common.Methods
                     result += letter;
                 }
             }
+            result = result.Trim();
             return result;
         }
     }

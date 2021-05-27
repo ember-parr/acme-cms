@@ -11,7 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.BLTest", "Acme.BLTest\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.Common", "Acme.Common\Acme.Common.csproj", "{99C38D3A-599F-4A02-B244-3783CEEEDF6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.CommonTests", "Acme.CommonTests\Acme.CommonTests.csproj", "{D8024528-EB3E-4F2E-A71E-D72C6EC47949}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.CommonTestRun", "Acme.CommonTests\Acme.CommonTestRun.csproj", "{D8024528-EB3E-4F2E-A71E-D72C6EC47949}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.CommonTests", "Acme.CommonTests\Acme.CommonTests.csproj", "{2B9D1A4D-7BE3-4DAE-B64F-D38A2830350C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{D8024528-EB3E-4F2E-A71E-D72C6EC47949}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8024528-EB3E-4F2E-A71E-D72C6EC47949}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8024528-EB3E-4F2E-A71E-D72C6EC47949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B9D1A4D-7BE3-4DAE-B64F-D38A2830350C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B9D1A4D-7BE3-4DAE-B64F-D38A2830350C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B9D1A4D-7BE3-4DAE-B64F-D38A2830350C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B9D1A4D-7BE3-4DAE-B64F-D38A2830350C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,5 +51,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{1474D517-3815-49E6-9049-966571AB9D30} = {4BA7E9DF-9DD5-49C3-BA56-E39566FEEAD7}
 		{D8024528-EB3E-4F2E-A71E-D72C6EC47949} = {4BA7E9DF-9DD5-49C3-BA56-E39566FEEAD7}
+		{2B9D1A4D-7BE3-4DAE-B64F-D38A2830350C} = {4BA7E9DF-9DD5-49C3-BA56-E39566FEEAD7}
 	EndGlobalSection
 EndGlobal
