@@ -14,4 +14,7 @@
     <Folder Include="Repositories\" />
     <Folder Include="Models\CustomerTypes\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Acme.Common\Acme.Common.csproj" />
+  </ItemGroup>
 </Project>

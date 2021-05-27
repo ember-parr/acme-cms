@@ -58,6 +58,51 @@ namespace Acme.BLTest
             Assert.True(expected == actual);
         }
 
+        [Fact]
+        public void ProductNameFormatting()
+        {
+            // Arrange
+            Product noSpaces = new Product
+            {
+                ProductName = "ChocolateBath",
+                CurrentPrice = 15M
+            };
+            Product lowerCase = new Product
+            {
+                ProductName = "chocolate bath",
+                CurrentPrice = 15M
+            };
+            Product allCaps = new Product
+            {
+                ProductName = "CHOCOLATE BATH",
+                CurrentPrice = 15M
+            };
+            Product inverseCase = new Product
+            {
+                ProductName = "cHOCOLATE bATH",
+                CurrentPrice = 15M
+            };
+            Product correctName = new Product
+            {
+                ProductName = "Chocolate Bath",
+                CurrentPrice = 15M
+            };
+            string expected = "Chocolate Bath";
+
+            // Act
+            var actual1 = noSpaces.ProductName;
+            var actual2 = lowerCase.ProductName;
+            var actual3 = allCaps.ProductName;
+            var actual4 = inverseCase.ProductName;
+            var actual5 = correctName.ProductName;
+
+            // Assert
+            Assert.True(expected == actual1);
+            Assert.True(expected == actual2);
+            Assert.True(expected == actual3);
+            Assert.True(expected == actual4);
+            Assert.True(expected == actual5);
+        }
 
     }
 }
