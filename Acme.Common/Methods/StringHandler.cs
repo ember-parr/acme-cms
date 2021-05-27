@@ -27,8 +27,37 @@ namespace Acme.Common.Methods
 
         public string TitleCase(string source)
         {
+            bool isAllUpperCase(string input)
+            {
+                for (int i = 0; i < input.Length; i++)
+                {
+                    if (!Char.IsUpper(input[i]) && input[i].ToString() != " ") return false;
+                }
+                    return true;
+            }
+
             TextInfo TextCasing = new CultureInfo("en-US", false).TextInfo;
-            return TextCasing.ToTitleCase(source).Trim();
+            if(string.IsNullOrWhiteSpace(source))
+            {
+                return string.Empty;
+            }
+            // if the source contains a space in the middle
+            else if (source.Trim().Contains(" "))
+            {
+                string lowerCased = source.ToLower();
+                return TextCasing.ToTitleCase(lowerCased).Trim();
+            }
+            // if the source is all capitilized with no spaces in middle
+            else if (isAllUpperCase(source) && !source.Contains(" "))
+            {
+                return TextCasing.ToTitleCase(source);
+            }
+            // if the source is regular all caps with spaces
+            else 
+            {
+                var addSpaces = InsertSpaces(source);
+                return TextCasing.ToTitleCase(addSpaces).Trim();
+            }
         }
 
         public string LowerCase(string source)
@@ -36,14 +65,6 @@ namespace Acme.Common.Methods
             TextInfo TextCasing = new CultureInfo("en-US", false).TextInfo;
             return TextCasing.ToLower(source).Trim();
         }
-
-        //public string SentenceCase(string source)
-        //{
-        //    var lowercase = source.ToLower();
-        //    var r = new Regex(@"(^[a-z])|\.\s+(.)", RegexOptions.ExplicitCapture);
-        //    var result = r.Replace(lowercase, source => source.Value.ToUpper());
-        //    return result.Trim();
-        //}
 
         public string SentenceCase(string source)
         {
