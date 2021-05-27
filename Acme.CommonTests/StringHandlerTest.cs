@@ -84,5 +84,21 @@ namespace Acme.CommonTests
             // Assert
             Assert.True(expected == actual);
         }
+
+        [Fact]
+        public void SentenceCaseTestValid()
+        {
+            // Arrange
+            var source = "  ALL CAPS. all little. mIxEd.";
+            var expected = "All caps. All little. Mixed.";
+            var handler = new StringHandler();
+
+            // Act
+            var actual = handler.SentenceCase(source);
+            Console.WriteLine(actual);
+
+            // Assert
+            Assert.True(expected == actual);
+        }
     }
 }
