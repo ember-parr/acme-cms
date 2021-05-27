@@ -26,7 +26,7 @@ namespace ACM.BL.Repositories
                 customer.LastName = "Bar";
                 customer.AddressList = addressRepository.RetrieveByCustomerId(customerId).ToList();
             }
-            Console.WriteLine("IT WORKED!");
+            Console.WriteLine($"Customer: {customer.ToString()}");
             return customer;
         }
 
