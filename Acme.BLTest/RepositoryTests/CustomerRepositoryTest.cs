@@ -82,5 +82,64 @@ namespace Acme.BLTest.RepositoryTests
                 Assert.True(expected.AddressList[i].PostalCode == actual.AddressList[i].PostalCode);
             }
         }
+
+        [Fact]
+        public void SaveTestValid()
+        {
+            // Arrange
+            var customerRepo = new CustomerRepository();
+            var updatedCustomer = new Customer(18)
+            {
+                Email = "Foo@bar.org",
+                FirstName = "Foo",
+                LastName = "Bar"
+            };
+
+            // Act
+            var actual = customerRepo.Save(updatedCustomer);
+
+            // Assert
+            Assert.True(actual == true);
+        }
+
+        [Fact]
+        public void SaveTestMissingEmail()
+        {
+            // Arrange
+            var customerRepo = new CustomerRepository();
+            var updatedCustomer = new Customer(18)
+            {
+                FirstName = "Foo",
+                LastName = "Bar",
+                HasChanges = true
+            };
+
+            // Act
+            var actual = customerRepo.Save(updatedCustomer);
+            Console.WriteLine($"Customer.IsValid = {updatedCustomer.IsValid}");
+
+            // Assert
+            Assert.False(actual);
+        }
+
+        [Fact]
+        public void SaveTestInvalidEmail()
+        {
+            // Arrange
+            var customerRepo = new CustomerRepository();
+            var updatedCustomer = new Customer(24)
+            {
+                Email = "foobar@google",
+                FirstName = "Foo",
+                LastName = "Bar",
+                HasChanges = true
+            };
+
+            // Act
+            var actual = customerRepo.Save(updatedCustomer);
+
+            // Assert
+            Assert.True(actual == false);
+        }
     }
 }
