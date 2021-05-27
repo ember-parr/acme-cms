@@ -34,7 +34,7 @@ namespace Acme.BLTest.RepositoryTests
         {
             // Arrange
             var productRepo = new ProductRepository();
-            var updatedProduct = new Product(2)
+            var updatedProduct = new Product(4)
             {
                 CurrentPrice = 18M,
                 ProductDescription = "Assorted size set of bouncy balls",
@@ -47,6 +47,26 @@ namespace Acme.BLTest.RepositoryTests
 
             // Assert
             Assert.True(actual == true);
+        }
+
+        [Fact]
+        public void SaveTestMissingPrice()
+        {
+            // Arrange
+            var productRepo = new ProductRepository();
+            var updatedProduct = new Product(4)
+            {
+                CurrentPrice = null,
+                ProductDescription = "Assorted size set of bouncy balls",
+                ProductName = "Bouncy Ball Bonanza",
+                HasChanges = true
+            };
+
+            // Act
+            var actual = productRepo.Save(updatedProduct);
+
+            // Assert
+            Assert.True(actual == false);
         }
     }
 }
