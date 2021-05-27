@@ -9,3 +9,5 @@ Working with unit testing & object oriented programming best practices.
 * Linq
 
 *note: all data is hard coded due to lack of Data Access Layer in this project*
+
+[LinkedIn](https://www.linkedin.com/in/emberparr/ "Ember Parr's LinkedIn")
