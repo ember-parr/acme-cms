@@ -4,9 +4,15 @@ using System.Text.RegularExpressions;
 
 namespace Acme.Common.Methods
 {
-    public class StringHandler
+    public static class StringHandler
     {
-        public string InsertSpaces(string source)
+        /// <summary>
+        /// Insert spaces before each capital letter in a string ||
+        /// Does not insert space if space already exists. 
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static string InsertSpaces(this string source)
         {
             string result = string.Empty;
             if (!String.IsNullOrWhiteSpace(source))
@@ -25,7 +31,12 @@ namespace Acme.Common.Methods
             return result;
         }
 
-        public string TitleCase(string source)
+        /// <summary>
+        /// Reformats string to Title Casing 
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static string TitleCase(this string source)
         {
             bool isAllUpperCase(string input)
             {
@@ -60,13 +71,23 @@ namespace Acme.Common.Methods
             }
         }
 
-        public string LowerCase(string source)
+        /// <summary>
+        /// Reformats string to all lower case (including first letter)
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static string LowerCase(this string source)
         {
             TextInfo TextCasing = new CultureInfo("en-US", false).TextInfo;
             return TextCasing.ToLower(source).Trim();
         }
 
-        public string SentenceCase(string source)
+        /// <summary>
+        /// Reformats string to sentence case (first letter capitalized after each period.)
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static string SentenceCase(this string source)
         {
             var trimmed = source.Trim();
             string result = string.Empty;

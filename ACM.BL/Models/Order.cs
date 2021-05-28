@@ -21,11 +21,19 @@ namespace ACM.BL
         public int ShippingAddressId { get; set; }
         public List<OrderItem> OrderItems { get; set; }
 
+        /// <summary>
+        /// Prints order date & order ID
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
-            return $"{OrderDate.Value.Date} ({OrderId})";
+            return $"Order #:({OrderId}) placed on:{OrderDate.Value.Date}";
         }
 
+        /// <summary>
+        /// Checks for existing order date
+        /// </summary>
+        /// <returns></returns>
         public override bool Validate()
         {
             if (OrderDate == null)

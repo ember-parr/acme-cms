@@ -20,6 +20,11 @@ namespace ACM.BL
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }
 
+
+        /// <summary>
+        /// checks that postal code and address line one both exist
+        /// </summary>
+        /// <returns></returns>
         public bool Validate()
         {
             if (PostalCode == null)
