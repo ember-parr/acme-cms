@@ -19,14 +19,22 @@ namespace ACM.BL
         public string ProductDescription { get; set; }
         public int ProductId { get; private set; }
 
+        /// <summary>
+        /// prints product name
+        /// </summary>
+        /// <returns></returns>
         public override string ToString() => ProductName;
 
         private string _productName;
+
+        /// <summary>
+        /// GET formats name in title casing
+        /// </summary>
         public string ProductName
         {
             get
             {
-                return StringHandler.TitleCase(_productName);
+                return _productName.TitleCase();
             }
             set
             {
@@ -34,6 +42,10 @@ namespace ACM.BL
             }
         }
 
+        /// <summary>
+        /// checks for existing product name and current price
+        /// </summary>
+        /// <returns></returns>
         public override bool Validate()
         {
             if (string.IsNullOrWhiteSpace(ProductName))
