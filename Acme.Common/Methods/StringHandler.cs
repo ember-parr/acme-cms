@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Text.RegularExpressions;
 
-namespace Acme.Common.Methods
+namespace Acme.Common
 {
     public static class StringHandler
     {
