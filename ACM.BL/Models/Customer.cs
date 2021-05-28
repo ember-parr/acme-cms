@@ -28,6 +28,9 @@ namespace ACM.BL
 
         public override string ToString() => FullName;
 
+        /// <summary>
+        /// Formats name based on available data
+        /// </summary>
         public string FullName
         {
             get
@@ -45,12 +48,19 @@ namespace ACM.BL
             }
         }
 
+
+        /// <summary>
+        /// Prints formated full name
+        /// </summary>
         public void PrintName()
         {
             Console.WriteLine(FullName);
         }
 
-
+        /// <summary>
+        /// checks for existing last name, email & valid email characters
+        /// </summary>
+        /// <returns></returns>
         public override bool Validate()
         {
             if (string.IsNullOrWhiteSpace(LastName))
