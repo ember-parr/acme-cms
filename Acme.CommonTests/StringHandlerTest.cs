@@ -12,10 +12,9 @@ namespace Acme.CommonTests
             // Arrange
             var source = "MarioBrothers";
             var expected = "Mario Brothers";
-            var handler = new StringHandler();
 
             // Act
-            var actual = handler.InsertSpaces(source);
+            var actual = source.InsertSpaces();
             Console.WriteLine($"Source: {source}");
             Console.WriteLine($"Expected: {expected}");
             Console.WriteLine($"Actual: {actual}");
@@ -30,10 +29,9 @@ namespace Acme.CommonTests
             // Arrange
             var source = "Crazy Cat Lady";
             var expected = "Crazy Cat Lady";
-            var handler = new StringHandler();
 
             // Act
-            var actual = handler.InsertSpaces(source);
+            var actual = source.InsertSpaces();
 
             // Assert
             Assert.True(expected == actual);
@@ -45,10 +43,9 @@ namespace Acme.CommonTests
             // Arrange
             var source = "   ";
             var expected = String.Empty;
-            var handler = new StringHandler();
 
             // Act
-            var actual = handler.InsertSpaces(source);
+            var actual = source.InsertSpaces();
 
             // Assert
             Assert.True(expected == actual);
@@ -62,7 +59,7 @@ namespace Acme.CommonTests
             var expected = "Spongebob Squarepantz";
 
             // Act
-            var actual = StringHandler.TitleCase(source);
+            var actual = source.TitleCase();
 
             // Assert
             Assert.True(expected == actual);
@@ -76,7 +73,7 @@ namespace Acme.CommonTests
             var expected = "hello from the other side";
 
             // Act
-            var actual = StringHandler.LowerCase(source);
+            var actual = source.LowerCase();
             Console.WriteLine(actual);
 
             // Assert
@@ -91,7 +88,7 @@ namespace Acme.CommonTests
             var expected = "All caps. All little. Mixed.";
 
             // Act
-            var actual = StringHandler.SentenceCase(source);
+            var actual = source.SentenceCase();
             Console.WriteLine(actual);
 
             // Assert

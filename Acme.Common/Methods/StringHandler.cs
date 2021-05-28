@@ -25,7 +25,7 @@ namespace Acme.Common.Methods
             return result;
         }
 
-        public static string TitleCase(string source)
+        public static string TitleCase(this string source)
         {
             bool isAllUpperCase(string input)
             {
@@ -60,13 +60,13 @@ namespace Acme.Common.Methods
             }
         }
 
-        public static string LowerCase(string source)
+        public static string LowerCase(this string source)
         {
             TextInfo TextCasing = new CultureInfo("en-US", false).TextInfo;
             return TextCasing.ToLower(source).Trim();
         }
 
-        public static string SentenceCase(string source)
+        public static string SentenceCase(this string source)
         {
             var trimmed = source.Trim();
             string result = string.Empty;
