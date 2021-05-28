@@ -6,6 +6,12 @@ namespace Acme.Common.Methods
 {
     public static class StringHandler
     {
+        /// <summary>
+        /// Insert spaces before each capital letter in a string ||
+        /// Does not insert space if space already exists. 
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
         public static string InsertSpaces(this string source)
         {
             string result = string.Empty;
@@ -25,6 +31,11 @@ namespace Acme.Common.Methods
             return result;
         }
 
+        /// <summary>
+        /// Reformats string to Title Casing 
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
         public static string TitleCase(this string source)
         {
             bool isAllUpperCase(string input)
@@ -60,12 +71,22 @@ namespace Acme.Common.Methods
             }
         }
 
+        /// <summary>
+        /// Reformats string to all lower case (including first letter)
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
         public static string LowerCase(this string source)
         {
             TextInfo TextCasing = new CultureInfo("en-US", false).TextInfo;
             return TextCasing.ToLower(source).Trim();
         }
 
+        /// <summary>
+        /// Reformats string to sentence case (first letter capitalized after each period.)
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
         public static string SentenceCase(this string source)
         {
             var trimmed = source.Trim();
