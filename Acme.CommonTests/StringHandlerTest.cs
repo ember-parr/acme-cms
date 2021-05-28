@@ -60,10 +60,9 @@ namespace Acme.CommonTests
             // Arrange
             var source = "  sPoNgEboB sQUaRePanTz";
             var expected = "Spongebob Squarepantz";
-            var handler = new StringHandler();
 
             // Act
-            var actual = handler.TitleCase(source);
+            var actual = StringHandler.TitleCase(source);
 
             // Assert
             Assert.True(expected == actual);
@@ -75,10 +74,9 @@ namespace Acme.CommonTests
             // Arrange
             var source = "  HEllO FroM tHe oTHEr SiDe  ";
             var expected = "hello from the other side";
-            var handler = new StringHandler();
 
             // Act
-            var actual = handler.LowerCase(source);
+            var actual = StringHandler.LowerCase(source);
             Console.WriteLine(actual);
 
             // Assert
@@ -91,10 +89,9 @@ namespace Acme.CommonTests
             // Arrange
             var source = "  ALL CAPS. all little. mIxEd.";
             var expected = "All caps. All little. Mixed.";
-            var handler = new StringHandler();
 
             // Act
-            var actual = handler.SentenceCase(source);
+            var actual = StringHandler.SentenceCase(source);
             Console.WriteLine(actual);
 
             // Assert

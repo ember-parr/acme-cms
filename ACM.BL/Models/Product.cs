@@ -26,8 +26,7 @@ namespace ACM.BL
         {
             get
             {
-                var stringHandler = new StringHandler();
-                return stringHandler.TitleCase(_productName);
+                return StringHandler.TitleCase(_productName);
             }
             set
             {
