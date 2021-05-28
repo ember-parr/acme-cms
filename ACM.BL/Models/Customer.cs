@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using ACM.BL.Models;
+using Acme.Common;
 using System.ComponentModel.DataAnnotations;
 using System.Threading;
 
 namespace ACM.BL
 {
-    public class Customer : EntityBase
+    public class Customer : EntityBase, ILoggable
     {
         public Customer() : this(0)
         {

@@ -1,10 +1,10 @@
 ﻿using System;
 using ACM.BL.Models;
-using Acme.Common.Methods;
+using Acme.Common;
 
 namespace ACM.BL
 {
-    public class Product : EntityBase
+    public class Product : EntityBase, ILoggable
     {
         public Product()
         {
@@ -24,6 +24,8 @@ namespace ACM.BL
         /// </summary>
         /// <returns></returns>
         public override string ToString() => ProductName;
+
+        public string Log() => $"{ProductId}: {ProductName} || Detail: {ProductDescription} || Status: {EntityState.ToString()} || Current Price:${CurrentPrice}";
 
         private string _productName;
 
