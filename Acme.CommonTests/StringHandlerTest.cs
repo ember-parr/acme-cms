@@ -1,5 +1,5 @@
 using System;
-using Acme.Common.Methods;
+using Acme.Common;
 using Xunit;
 
 namespace Acme.CommonTests
