@@ -26,6 +26,8 @@ namespace ACM.BL
         public int CustomerId { get; private set; }
         public int CustomerType { get; set; }
 
+        public string Log() => $"{CustomerId}: {FullName} Email: {Email} Status: {EntityState.ToString()}";
+
         public override string ToString() => FullName;
 
         /// <summary>
