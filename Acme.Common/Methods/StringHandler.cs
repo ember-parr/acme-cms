@@ -4,9 +4,9 @@ using System.Text.RegularExpressions;
 
 namespace Acme.Common.Methods
 {
-    public class StringHandler
+    public static class StringHandler
     {
-        public string InsertSpaces(string source)
+        public static string InsertSpaces(string source)
         {
             string result = string.Empty;
             if (!String.IsNullOrWhiteSpace(source))
@@ -25,7 +25,7 @@ namespace Acme.Common.Methods
             return result;
         }
 
-        public string TitleCase(string source)
+        public static string TitleCase(string source)
         {
             bool isAllUpperCase(string input)
             {
@@ -60,13 +60,13 @@ namespace Acme.Common.Methods
             }
         }
 
-        public string LowerCase(string source)
+        public static string LowerCase(string source)
         {
             TextInfo TextCasing = new CultureInfo("en-US", false).TextInfo;
             return TextCasing.ToLower(source).Trim();
         }
 
-        public string SentenceCase(string source)
+        public static string SentenceCase(string source)
         {
             var trimmed = source.Trim();
             string result = string.Empty;
